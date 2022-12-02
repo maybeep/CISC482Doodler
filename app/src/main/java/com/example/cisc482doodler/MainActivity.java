@@ -17,7 +17,6 @@ public class MainActivity extends AppCompatActivity implements PopupMenu.OnMenuI
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
         doodleView = findViewById(R.id.canvas);
         currentColor = findViewById(R.id.colorBlack);
         strokeWeight = findViewById(R.id.strokeWeight);
@@ -60,10 +59,10 @@ public class MainActivity extends AppCompatActivity implements PopupMenu.OnMenuI
                 doodleView.setStrokeWeight(100);
                 return true;
             case R.id.opacity50:
-                doodleView.setOpacity(0x80);
+                doodleView.setOpacity(0xA);
                 return true;
             case R.id.opacity75:
-                doodleView.setOpacity(0xBF);
+                doodleView.setOpacity(0x14);
                 return true;
             case R.id.opacity100:
                 doodleView.setOpacity(0xFF);
