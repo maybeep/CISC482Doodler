@@ -14,6 +14,6 @@ Features include:
 ### Installation
 1. Clone The Repo
    ```sh
-   git clone https://github.com/your_username_/Project-Name.git
+   git clone https://github.com/maybeep/CISC482Doodler.git
    ```
 2. Run
