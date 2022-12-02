@@ -17,3 +17,7 @@ Features include:
    git clone https://github.com/maybeep/CISC482Doodler.git
    ```
 2. Run
+
+## References 
+- <a href=https://code.tutsplus.com/tutorials/android-sdk-create-a-drawing-app-interface-creation--mobile-19021>Android SDK: Create a Drawing App - Interface Creation</a>
+- <a href=https://code.tutsplus.com/tutorials/android-sdk-create-a-drawing-app-touch-interaction--mobile-19202>Android SDK: Create a Drawing App – Touch Interaction</a>
