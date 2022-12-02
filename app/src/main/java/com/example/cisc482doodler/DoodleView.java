@@ -18,7 +18,6 @@ public class DoodleView extends View {
     private Canvas doodle;
     private Bitmap bitmap;
     private int paintColor = Color.BLACK;
-    static final float TOLERANCE=4;
 
     public DoodleView(Context context, AttributeSet attrs) {
         super(context, attrs);
@@ -36,13 +35,6 @@ public class DoodleView extends View {
         brush.setStrokeCap(Paint.Cap.ROUND);
         brush.setStrokeWidth(50);
         canvasBrush = new Paint(Paint.DITHER_FLAG);
-    }
-
-    @Override
-    protected void onSizeChanged(int w, int h, int oldw, int oldh) {
-        super.onSizeChanged(w, h, oldw, oldh);
-        bitmap = Bitmap.createBitmap(w, h, Bitmap.Config.ARGB_8888);
-        doodle = new Canvas(bitmap);
     }
 
     // clears the canvas
@@ -64,9 +56,19 @@ public class DoodleView extends View {
     }
 
     @Override
+    protected void onSizeChanged(int w, int h, int oldw, int oldh) {
+        super.onSizeChanged(w, h, oldw, oldh);
+        bitmap = Bitmap.createBitmap(w, h, Bitmap.Config.ARGB_8888);
+        doodle = new Canvas(bitmap);
+    }
+
+    @Override
     protected void onDraw(Canvas canvas) {
-        super.onDraw(canvas);
+        canvas.drawBitmap(bitmap, 0,0, brush);
         canvas.drawPath(path, brush);
+//        canvas.save();
+//        super.onDraw(canvas);
+//        canvas.drawPath(path, brush);
     }
 
     @Override
