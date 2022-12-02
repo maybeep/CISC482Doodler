@@ -11,16 +11,18 @@ import android.widget.PopupMenu;
 public class MainActivity extends AppCompatActivity implements PopupMenu.OnMenuItemClickListener {
 
     private DoodleView doodleView;
-    private ImageButton currentColor, strokeWeight, opacity;
+    private ImageButton currentColor, strokeWeight, opacity, clear;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
         doodleView = findViewById(R.id.canvas);
         currentColor = findViewById(R.id.colorBlack);
         strokeWeight = findViewById(R.id.strokeWeight);
         opacity = findViewById(R.id.opacity);
+        clear = findViewById(R.id.clear);
     }
 
     public void clear(View v) {
@@ -28,7 +30,7 @@ public class MainActivity extends AppCompatActivity implements PopupMenu.OnMenuI
     }
 
     public void changeColor(View v){
-        String color = v.getTag().toString();
+        String color = (String) v.getTag();
         doodleView.setColor(color);
     }
 
@@ -58,13 +60,13 @@ public class MainActivity extends AppCompatActivity implements PopupMenu.OnMenuI
                 doodleView.setStrokeWeight(100);
                 return true;
             case R.id.opacity50:
-                doodleView.setOpacity(128);
+                doodleView.setOpacity(0x80);
                 return true;
             case R.id.opacity75:
-                doodleView.setOpacity(191);
+                doodleView.setOpacity(0xBF);
                 return true;
             case R.id.opacity100:
-                doodleView.setOpacity(255);
+                doodleView.setOpacity(0xFF);
                 return true;
             default:
                 return false;
