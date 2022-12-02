@@ -10,7 +10,6 @@ Features include:
 - Clear drawing
 
 ## Getting Started
-How to set this up locally.
 
 ### Installation
 1. Clone The Repo
