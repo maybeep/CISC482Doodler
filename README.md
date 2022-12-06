@@ -4,6 +4,8 @@
 This is a simple Android drawing app. 
 
 Features include:
+- Save doodles
+- Load images & past doodles
 - Change brush color
 - Change brush size
 - Change brush opacity
