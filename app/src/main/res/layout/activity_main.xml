@@ -27,6 +27,15 @@
                 app:srcCompat="@drawable/save" />
 
             <ImageButton
+                android:id="@+id/loadButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:backgroundTint="#FFFFFF"
+                android:onClick="load"
+                app:srcCompat="@drawable/load" />
+
+            <ImageButton
                 android:id="@+id/colorRed"
                 android:layout_width="wrap_content"
                 android:layout_height="fill_parent"
@@ -118,10 +127,10 @@
 
         </LinearLayout>
 
-        <com.example.cisc482doodler.DoodleView
-            android:layout_width="match_parent"
-            android:layout_height="fill_parent"
-            android:id="@+id/canvas"/>
+            <com.example.cisc482doodler.DoodleView
+                android:layout_width="match_parent"
+                android:layout_height="fill_parent"
+                android:id="@+id/canvas"/>
 
     </LinearLayout>
 
