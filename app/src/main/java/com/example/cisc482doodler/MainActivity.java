@@ -2,11 +2,20 @@ package com.example.cisc482doodler;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.ContentValues;
+import android.content.Context;
+import android.graphics.Bitmap;
+import android.net.Uri;
 import android.os.Bundle;
+import android.os.Environment;
+import android.provider.MediaStore;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageButton;
 import android.widget.PopupMenu;
+import android.widget.Toast;
+
+import java.io.OutputStream;
 
 public class MainActivity extends AppCompatActivity implements PopupMenu.OnMenuItemClickListener {
 
@@ -22,6 +31,28 @@ public class MainActivity extends AppCompatActivity implements PopupMenu.OnMenuI
         strokeWeight = findViewById(R.id.strokeWeight);
         opacity = findViewById(R.id.opacity);
         clear = findViewById(R.id.clear);
+    }
+
+    public void save(View v) {
+        Bitmap doodle = doodleView.save();
+        OutputStream imageOutStream = null;
+        ContentValues cv = new ContentValues();
+        cv.put(MediaStore.Images.Media.DISPLAY_NAME, "doodle.jpg");
+        cv.put(MediaStore.Images.Media.MIME_TYPE, "image/jpg");
+        cv.put(MediaStore.Images.Media.RELATIVE_PATH, Environment.DIRECTORY_PICTURES);
+        Uri uri = getContentResolver().insert(MediaStore.Images.Media.EXTERNAL_CONTENT_URI, cv);
+        try {
+            imageOutStream = getContentResolver().openOutputStream(uri);
+            doodle.compress(Bitmap.CompressFormat.PNG, 100, imageOutStream);
+            imageOutStream.close();
+            Context context = getApplicationContext();
+            CharSequence text = "Saving doodle to images...";
+            int duration = Toast.LENGTH_LONG;
+            Toast toast = Toast.makeText(context, text, duration);
+            toast.show();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 
     public void clear(View v) {

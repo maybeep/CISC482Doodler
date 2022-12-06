@@ -45,7 +45,10 @@ public class DoodleView extends View {
         brush.setStrokeCap(Paint.Cap.ROUND);
     }
 
-    // clears the canvas
+    public Bitmap save() {
+        return bitmap;
+    }
+
     public void clear() {
         doodle.drawColor(Color.TRANSPARENT, PorterDuff.Mode.CLEAR);
         invalidate();
