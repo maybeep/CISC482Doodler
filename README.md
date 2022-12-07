@@ -23,3 +23,4 @@ Features include:
 ## References 
 - <a href=https://code.tutsplus.com/tutorials/android-sdk-create-a-drawing-app-interface-creation--mobile-19021>Android SDK: Create a Drawing App - Interface Creation</a>
 - <a href=https://code.tutsplus.com/tutorials/android-sdk-create-a-drawing-app-touch-interaction--mobile-19202>Android SDK: Create a Drawing App – Touch Interaction</a>
+- <a href=https://www.geeksforgeeks.org/how-to-select-an-image-from-gallery-in-android/>How to Select an Image From Gallery in Android</a>
